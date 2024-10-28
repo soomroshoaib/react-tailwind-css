@@ -6,7 +6,7 @@ const Navber = () => {
     const [toggle, setToggle] = useState(false)
   return (
     <div className='bg-[#2699fb] p-4'>
-        <div className='max-w-[1240px] flex items-center py-[10px] justify-between  mx-auto'>
+        <d  iv className='max-w-[1240px] flex items-center py-[10px] justify-between  mx-auto'>
             <div className='text-3xl font-bold text-white'>
                 Saylani
             </div>
@@ -37,7 +37,7 @@ const Navber = () => {
                 <li className='p-5'>Home</li>
             </ul>
 
-        </div>
+        </d>
     </div>
   )
 }

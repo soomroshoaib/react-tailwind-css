@@ -1,0 +1,122 @@
+@use "_colors" as color ;
+@use "_colors2" as color2 ;
+ // es ko hum bolta hai modules
+
+ $w:2rem;
+
+// $colors1 : rgb(156, 26, 26);
+// $colors2 : rgb(97, 209, 153);
+// $colors3 : rgb(16, 2, 2);
+
+
+
+// $large: 50px;
+
+// body{
+//     background-color: $colors1;
+//     color: $colors2;
+//     width: $large;
+// }
+
+
+
+// $colors1 : rgb(156, 26, 26), rgb(97, 209, 153) , rgb(16, 2, 2);
+
+// body{
+//     background-color: nth($colors1, 3);
+// }
+
+
+
+.productCard {
+    max-width: 600px;
+    background-color: aqua;
+}
+
+.productCard > a {
+    color: green;
+}
+
+.productCard > h2 {
+    color: blanchedalmond;
+}
+
+// nesting
+
+
+.productCard {
+    max-width: 600px;
+    background-color: aqua;
+
+    > a {
+        color: green;
+    }
+    > h2 {
+        color: blanchedalmond;
+    }
+}
+
+// @import "_colors";
+// @import "_colors2";
+
+.productCard {
+    max-width: 600px;
+    background-color: color.$red;
+
+    > a {
+        color: color.$green;
+    }
+    > h2 {
+        color: color.$pink;
+    }
+}
+
+// button{
+//     background-color: color2.$green;
+//     padding: 1rem 2rem;
+//     cursor: pointer;
+// }
+
+// p{
+//     @extend button;
+// }
+
+
+// custum{
+//     background-color: color2.$green;
+//     padding: 1rem 2rem;
+//     cursor: pointer;
+// }
+
+// p{
+//     @extend custum;
+// }
+
+custum{
+        background-color: color2.$green;
+        padding: 1rem 2rem;
+        cursor: pointer;
+    }
+
+    @mixin customfun($color){
+        background-color: $color;
+        padding: 1rem 2rem;
+        cursor: pointer;
+    }
+
+.p1{
+   @include customfun(blue);
+//    width: 10rem * 20; operaters
+width: $w + 2;
+   &:hover{
+    opacity: 0.7;
+   }
+}
+
+.p2{
+    @include customfun(blue);
+ }
+
+ .p3{
+    @include customfun(color.$red);
+ }
